@@ -14,6 +14,14 @@ c.upload('/tmp/filename2.pdf', registered='insertion', envelope='c4')
 c.disconnect()
 ```
 
+## with-statement
+```python
+with onlinebrief24.Client('email@example.com', 'secret_password') as c:
+    c.upload('/tmp/filename1.pdf', duplex=False, color=False)
+    c.upload('/tmp/filename2.pdf', registered='insertion', envelope='c4')
+```
+
+
 ## Optionen für Brief
 
 <table width="100%">

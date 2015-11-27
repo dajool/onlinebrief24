@@ -123,10 +123,29 @@ with onlinebrief24.Client('email@example.com', 'secret_password') as c:
       Einschreiben: Nein, Einwurf-Einschreiben, Standard-Einschreiben, Einschreiben eigenhändig
     </td>
   </tr>
+
+  <tr>
+    <td>
+      <strong>payment_slip</strong>
+    </td>
+    <td>
+      <ul>
+        <li>None</li>
+        <li>national</li>
+        <li>sepa</li>
+      </ul>
+    </td>
+    <td>
+      None
+    </td>
+    <td>
+      Zahlschein: Kein Zahlschein, Inlands-Zahlschein, SEPA-Zahlschein
+    </td>
+  </tr>
   
 
 </table>
 
 ## Copyright
 
-All rights reservred.
+All rights reserved.

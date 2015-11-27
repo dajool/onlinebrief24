@@ -51,22 +51,26 @@ class Letter(object):
         if envelope in LETTER_ENVELOPE_FORMATS.keys():
             self.envelope = envelope
         else:
-            ValueError('keyword envelope should be on of those: %s' % LETTER_ENVELOPE_FORMATS.values())
+            raise ValueError(
+                'keyword envelope should be on of those: %s' % ", ".join(LETTER_ENVELOPE_FORMATS.keys()))
 
         if distribution in LETTER_DISTRIBUTION_FORMATS.keys():
             self.distribution = distribution
         else:
-            ValueError('keyword distribution should be on of those: %s' % LETTER_DISTRIBUTION_FORMATS.values())
+            raise ValueError(
+                'keyword distribution should be on of those: %s' % ", ".join(LETTER_DISTRIBUTION_FORMATS.keys()))
 
         if registered in LETTER_REGISTERED_OPTIONS.keys():
             self.registered = registered
         else:
-            ValueError('keyword registered should be on of those: %s' % LETTER_REGISTERED_OPTIONS.values())
+            raise ValueError(
+                'keyword registered should be on of those: %s' % ", ".join(LETTER_REGISTERED_OPTIONS.keys()))
 
         if payment_slip in LETTER_PAYMENT_SLIP_OPTIONS.keys():
             self.payment_slip = payment_slip
         else:
-            ValueError('keyword payment_slip should be on of those: %s' % LETTER_PAYMENT_SLIP_OPTIONS.values())
+            raise ValueError(
+                'keyword payment_slip should be on of those: %s' % ", ".join(LETTER_PAYMENT_SLIP_OPTIONS.keys()))
 
         self.remote_filename = self._generate_remote_filename()
 

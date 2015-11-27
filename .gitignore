@@ -26,3 +26,4 @@ deps/*
 var/*
 env/*
 **/.thumbnails/*
+**/.idea/*

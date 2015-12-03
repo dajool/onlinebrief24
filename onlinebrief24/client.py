@@ -37,12 +37,13 @@ class Letter(object):
     """
 
     def __init__(self, path_to_pdf_file, color=True, duplex=True, envelope='din_lang',
-                 distribution='auto', registered=None, payment_slip=None):
+                 distribution='auto', registered=None, payment_slip=None, test=False):
         """\
         Initializing and checking values.
         """
 
         self.local_filename = ntpath.basename(path_to_pdf_file)
+        self.test = test
         self.color = color
         self.duplex = duplex
         registered = 'none' if registered is None else registered
@@ -87,7 +88,10 @@ class Letter(object):
         The fist 6 digits are used at the moment. Digits 7 to 13 should always be zero.
         Chars that are officially allowed in the filename: A-Z a-z 0-9 . - _ #
         """
-        remote_filename = ""
+        if self.test:
+            remote_filename = "TEST_"
+        else:
+            remote_filename = ""
         remote_filename += str(int(self.color))
         remote_filename += str(int(self.duplex))
         remote_filename += str(LETTER_ENVELOPE_FORMATS.get(self.envelope))
@@ -144,6 +148,7 @@ class Client(object):
            * distribution
            * registered
            * payment_slip
+           * test
         """
         letter = Letter(path_to_file, **kwargs)
         self.sftp.put(path_to_file, os.path.join(self.upload_path, ntpath.basename(letter.get_remote_filename())))

@@ -6,6 +6,7 @@
 *.pyc
 *~
 .*.swp
+*.egg-info/*
 nbproject
 build/
 build_configs/
@@ -25,5 +26,6 @@ var/uploads/*
 deps/*
 var/*
 env/*
+dist/*
 **/.thumbnails/*
 **/.idea/*

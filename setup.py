@@ -5,7 +5,7 @@ setup(
     version='1.0',
     packages=find_packages("."),
     include_package_data=True,
-    url='https://gitlab.dajool.com/breuer/onlinebrief',
+    url='https://github.com/dajool/onlinebrief24',
     license='MIT License',
     author='Jochen Breuer',
     author_email='breuer@dajool.com',

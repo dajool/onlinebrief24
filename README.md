@@ -148,4 +148,4 @@ with onlinebrief24.Client('email@example.com', 'secret_password') as c:
 
 ## Copyright
 
-All rights reserved.
+[MIT License](https://github.com/dajool/onlinebrief24/blob/master/LICENSE)

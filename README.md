@@ -1,6 +1,6 @@
 # Installation
 
-```pip install onlinebrief24``` (!!! Sorry, not yet !!!)
+```pip install onlinebrief24```
 
 # Beispiele
 

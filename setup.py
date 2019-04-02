@@ -12,6 +12,8 @@ setup(
     install_requires=[
         'paramiko>=1.15.3',
     ],
-    description='Client for OnlineBrief24.',
+    description='Python client for onlinebrief24.de - a German letter sending service.',
+    long_description=open('README.rst', 'r').read(),
+    keywords = ['pdf', 'mailing', 'letters', 'post'],
     platforms='any',
 )

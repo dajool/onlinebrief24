@@ -3,6 +3,7 @@
 import os
 import ntpath
 import paramiko
+from six import string_types
 
 
 LETTER_ENVELOPE_FORMATS = {
@@ -75,7 +76,7 @@ class Letter(object):
 
         # cost_center should be a string and not longer than 18 characters.
         if cost_center is not None:
-            if not isinstance(cost_center, basestring):
+            if not isinstance(cost_center, string_types):
                 raise ValueError("cost_center must be a string.")
 
             if len(cost_center) < 18:
@@ -117,13 +118,13 @@ class Letter(object):
             remote_filename += filename + "#" + self.cost_center + "#" + file_extension
         else:
             remote_filename += self.local_filename
-        print remote_filename
+        print(remote_filename)
         return remote_filename
 
 
 class Client(object):
     """\
-    Client for OnlineBrief24.de.
+    Client for OnlineBrief24.de. Initialize with Client('username', 'password').
     """
 
     def __init__(self, username, password, host="api.onlinebrief24.de", port=22, upload_path="/upload/api"):

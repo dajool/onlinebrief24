@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='onlinebrief24',
-    version='1.0',
+    version='1.1',
     packages=find_packages("."),
     include_package_data=True,
     url='https://github.com/dajool/onlinebrief24',
